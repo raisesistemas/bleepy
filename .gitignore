@@ -12,3 +12,10 @@
 *.o
 *.a
 mkmf.log
+.vagrant
+
+
+
+
+commands.txt
+

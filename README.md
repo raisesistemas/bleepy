@@ -20,7 +20,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+For Rails applications add a bleepy.rb configuration file at config/initializers
+
+```ruby
+
+Bleepy.configuration do |config|
+  config.consumer_key = ENV['CONSUMER_KEY']
+  config.consumer_secret = ENV['CONSUMER_SECRET']
+  config.token_key = ENV['TOKEN_KEY']
+  config.token_secret = ENV['TOKEN_SECRET']
+end
+
+```
+
 
 ## Contributing
 
