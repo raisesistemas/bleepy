@@ -1,0 +1,8 @@
+irb -rubygems -I lib -r bleepy.rb
+
+Bleepy.configure do |config|
+  config.consumer_key = 'Bw5pEia7'
+  config.consumer_secret = 'TqIcFRlr'
+  config.token_key = 'Pz5333YImqBynf7Nh7/K9SrMLKs='
+  config.token_secret = 'Ff6UbnOULG2rCPvWcs4yVFF8t9E='
+end
