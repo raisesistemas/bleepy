@@ -1,6 +1,6 @@
 # Bleepy
 
-TODO: Write a gem description
+Bleepy is a ruby client for take.net API.
 
 ## Installation
 
@@ -20,7 +20,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+For Rails applications add bleepy.rb configuration file to config/initializers
+
+```ruby
+
+  Bleepy.configure do |config|
+    config.consumer_key = 'consumer_key'
+    config.consumer_secret = 'consumer_secret'
+    config.token_key = 'token_key'
+    config.token_secret = 'token_secret'
+  end
+
+```
+
 
 ## Contributing
 
