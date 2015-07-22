@@ -29,6 +29,7 @@ For Rails applications add bleepy.rb configuration file to config/initializers
     config.consumer_secret = 'consumer_secret'
     config.token_key = 'token_key'
     config.token_secret = 'token_secret'
+    config.callback_url = 'http://app_url/controller'
   end
 
 ```

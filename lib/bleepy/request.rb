@@ -1,7 +1,7 @@
 module Bleepy
   class Request
 
-    BASE_URL = 'http://api.take.io/rest/1.0'
+    BASE_URL = 'http://api.take.io/rest/1.0/'
 
     def get(url)
       connection.get do |request|
