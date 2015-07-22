@@ -1,19 +1,17 @@
-require 'bleepy/client/domains'
+require 'forwardable'
 require 'bleepy/client/messages'
-require 'bleepy/client/users'
-require 'bleepy/client/wallets'
 
 module Bleepy
   class Client
 
-    include Bleepy::Client::Domains
     include Bleepy::Client::Messages
-    include Bleepy::Client::Users
-    include Bleepy::Client::Wallets
+    extend Forwardable
 
-    def connection
-      @connection ||= Bleepy::Request.new.connection
+    def initialize
+      @request = Bleepy::Request.new
     end
+
+    def_delegators :@request, :get, :post
 
   end
 end
