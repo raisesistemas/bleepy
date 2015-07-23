@@ -31,7 +31,7 @@ module Bleepy
 
     def headers
       {
-        'User-Agent' => "Bleepy-#{Bleepy::VERSION}",
+        'User-Agent' => 'Bleepy',
         'Content-Type' => 'application/json'
       }
     end

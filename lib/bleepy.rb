@@ -23,5 +23,4 @@ module Bleepy
   autoload :Client, 'bleepy/client'
   autoload :Request, 'bleepy/request'
   autoload :Version, 'bleepy/version'
-
 end
