@@ -1,6 +1,7 @@
 require 'faraday'
 require 'faraday_middleware'
 require 'simple_oauth'
+require 'bleepy/version'
 
 module Bleepy
   class << self
@@ -21,6 +22,6 @@ module Bleepy
   end
 
   autoload :Client, 'bleepy/client'
+  autoload :Helpers, 'bleepy/helpers'
   autoload :Request, 'bleepy/request'
-  autoload :Version, 'bleepy/version'
 end

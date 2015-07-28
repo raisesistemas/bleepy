@@ -1,8 +1,6 @@
 module Bleepy
   class Request
 
-    BASE_URL = 'http://api.take.io/rest/1.0/'
-
     def get(url)
       connection.get do |request|
         request.url url
@@ -21,7 +19,7 @@ module Bleepy
     private
 
     def connection
-      Faraday.new BASE_URL do |conn|
+      Faraday.new Bleepy::Helpers::BASE_URL do |conn|
         conn.request :oauth, oauth_params
         conn.request :json
         conn.response :json, content_type: /\bjson$/
@@ -31,7 +29,7 @@ module Bleepy
 
     def headers
       {
-        'User-Agent' => 'Bleepy',
+        'User-Agent' => "Bleepy-#{Bleepy::VERSION}",
         'Content-Type' => 'application/json'
       }
     end
