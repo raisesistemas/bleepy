@@ -6,6 +6,10 @@ module Bleepy
         get('messages').body['result']['entry']
       end
 
+      def get_message(oid)
+        get("messages/#{oid}").body
+      end
+
       def send_message(options = {})
         message = post('messages', body(options))
         return nil unless message.status == 201
