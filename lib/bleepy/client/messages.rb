@@ -3,17 +3,19 @@ module Bleepy
 
     module Messages
       def messages
-        get('messages').body['result']['entry']
+        request = get('messages')
+        return request.body['result']['entry'] if request.status == 200
       end
 
       def get_message(oid)
-        get("messages/#{oid}").body
+        request = get("messages/#{oid}")
+        return request.body['entry'] if request.status == 200
       end
 
       def send_message(options = {})
-        message = post('messages', body(options))
-        return nil unless message.status == 201
-        message['location'].gsub(Bleepy::Helpers::BASE_URL + 'messages/', '')
+        request = post('messages', body(options))
+        return nil unless request.status == 201
+        request['location'].gsub(Bleepy::Helpers::BASE_URL + 'messages/', '')
       end
 
       private
